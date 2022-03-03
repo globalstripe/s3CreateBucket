@@ -1,0 +1,15 @@
+{
+  "name": "s3create",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy:dev": "npx sls deploy --stage dev",
+    "remove:dev": "npx sls remove --stage dev",
+    "deploy:stage": "npx sls deploy --stage stage",
+    "remove:stage": "npx sls remove --stage stage"
+  },
+  "author": "",
+  "license": "ISC"
+}

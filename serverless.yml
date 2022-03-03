@@ -1,0 +1,23 @@
+service: bynder-greenfly
+frameworkVersion: '3'
+configValidationMode: error
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  stage: dev
+
+resources:
+  Resources:
+    Bucket:
+      Type: AWS::S3::Bucket
+      Properties:
+        BucketName: ${self:service}-${self:provider.stage}-ingest
+
+outputs:
+  BucketName:
+    Description: Bucket Created using this template.
+    Value: !Ref Bucket
+  BucketArn:
+    Value: !GetAtt Bucket.Arn
+
